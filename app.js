@@ -4,9 +4,8 @@ app.use(express.json());
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const path = require("path");
-const dbPath = path.join(__dirname, "mysql://root:EgLAg7ByaBgWyPCoTuWb@containers-us-west-98.railway.app:7325/railway");
-// const hbs = require('hbs');
-// const navbar = path.join(__dirname + '/template');
+const port = process.env.port || 3000;
+const dbPath = path.join(__dirname, "cricketTeam.db");
 let db = null;
 
 // app.set('view engine','hbs');
@@ -16,7 +15,7 @@ const initiliseDbAndServer = async () => {
       filename: dbPath,
       driver: sqlite3.Database,
     });
-    app.listen(3000, () => {
+    app.listen(port, () => {
       console.log("server is running at port 3000");
     });
   } catch (e) {

@@ -5,6 +5,7 @@
     "main": "app.js",
     "author": "",
     "license": "ISC",
+    "scripts":"node app.js",
     "dependencies": {
         "express": "^4.17.1",
         "hbs": "^4.2.0",
